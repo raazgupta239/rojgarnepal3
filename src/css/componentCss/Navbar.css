@@ -1,0 +1,176 @@
+/* Navbar.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px; /* Adjust the gap between buttons */
+  flex-grow: 1;
+  justify-content: flex-end; /* Align from right to left */
+  align-items: center;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  background: green; /* Change the color to green */
+  transition: width 0.3s;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-item:hover::after,
+.login:hover::after { /* Apply the same hover effect to the login button */
+  width: 100%;
+}
+
+.auth-buttons {
+  margin-left: 15px;
+  display: flex;
+  gap: 32px; /* Adjust the gap between buttons */
+  align-items: center; /* Ensure buttons are vertically aligned */
+}
+
+.login,
+.signup {
+  
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center; /* Ensure text is vertically centered */
+  position: relative; /* Ensure proper z-index stacking */
+  overflow: hidden; /* Hide overflow of pseudo-element */
+}
+
+.login {
+  color: #000;
+}
+
+.signup {
+  color: #fff;
+  background-color: green;
+  border-radius: 14px;
+}
+
+
+/* Style for the green line for login button */
+.login::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: green;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+/* Expand the green line on hover */
+.login:hover::after {
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .nav-links,
+  .auth-buttons {
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar.show .nav-links,
+  .navbar.show .auth-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .nav-item,
+  .login,
+  .signup {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}

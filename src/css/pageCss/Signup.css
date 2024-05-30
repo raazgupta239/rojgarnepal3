@@ -1,0 +1,117 @@
+/* SignupForm.css */
+
+/* Base styles */
+.signup-container {
+  max-width: 900px; /* Increased max-width for the overall form */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 33px;
+  margin-bottom: 33px;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form h2 {
+  text-align: center;
+  color: #333;
+}
+
+.signup-form h2 span {
+  color: #ff6600;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Add margin between rows */
+}
+
+.form-group {
+  flex: 1;
+  margin-bottom: 20px; /* Add margin between rows */
+}
+
+.form-group:not(:last-child) {
+  margin-right: 50px; /* Add margin between input fields in the same line */
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%; /* Occupy full width */
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px; /* Add margin between input fields */
+}
+
+.submit-btn {
+  background-color: #003366;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: green;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Error message styles */
+.error-message {
+  color: rgb(232, 91, 91) ;
+  font-size: xx-large;
+  font-weight: bold;
+  /* text-align: center; */
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  .form-row {
+      flex-direction: column; /* Stack inputs vertically on smaller screens */
+  }
+
+  .form-group input,
+  .form-group select {
+      width: 100%; /* Set full width for input fields on smaller screens */
+  }
+
+  .form-group {
+      margin-bottom: 15px; /* Adjust margin for smaller screens */
+  }
+
+  .submit-btn {
+      padding: 12px;
+  }
+}
