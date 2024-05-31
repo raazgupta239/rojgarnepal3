@@ -1,6 +1,6 @@
 import './../css/pageCss/Signup.css'; // Import the CSS file
 import React, { useState } from 'react';
-// import axios from 'axios'; // Don't forget to import axios
+import axios from 'axios'; // Don't forget to import axios
 
 const SignupForm = () => {
   const [formData, setFormData] = useState({
@@ -30,10 +30,13 @@ const SignupForm = () => {
 
     try {
       // Send POST request to your API endpoint using Axios
-      const response = await axios.post('https://example.com/api/submit', formData);
-  
+      const response = await axios.post('https://rojgarnepal.loca.lt/user/signup', formData);
+        
       // Handle successful form submission
       console.log('Form data submitted successfully', response.data);
+
+      // Navigate to the VerifyOtp page upon successful signup
+      navigate('/verify-otp');
     } catch (error) {
       // Handle error and set the error message
       setErrorMessage('Error submitting form data: ' + (error.response?.data?.message || error.message));

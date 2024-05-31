@@ -9,6 +9,7 @@ import About from './pages/About';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Footer from './component/Footer.jsx';
+import JobPost from './pages/JobPost.jsx';
 
 const App = () => {
   return (
@@ -17,7 +18,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />        
+        <Route path="/jobPost" element={<JobPost/>} />        
+
         {/* <Route path="/join/freelancer" element={<JoinFreelancer />} />
         <Route path="/join/client" element={<JoinClient />} /> */}
         <Route path="/login" element={<Login />} />

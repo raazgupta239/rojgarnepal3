@@ -1,6 +1,5 @@
 import './../css/componentCss/Footer.css';
 import React from 'react';
-// import './Footer.css';
 
 const Footer = () => {
     return (
@@ -23,9 +22,9 @@ const Footer = () => {
                 <div className="footer-section">
                     <h2>Follow Us On:</h2>
                     <div className="social-icons">
-                        <a href="#"><i className="fab fa-facebook"></i></a>
-                        <a href="#"><i className="fab fa-instagram"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/login" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/accounts/login" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
