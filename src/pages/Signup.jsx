@@ -1,7 +1,7 @@
 import './../css/pageCss/Signup.css'; // Import the CSS file
 import React, { useState } from 'react';
 import axios from 'axios'; // Don't forget to import axios
-
+import { useNavigate } from 'react-router-dom';
 const SignupForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -23,7 +23,7 @@ const SignupForm = () => {
       [name]: value,
     });
   };
-
+const navigate= useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(''); // Reset the error message before submission
