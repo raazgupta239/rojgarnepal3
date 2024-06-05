@@ -3,25 +3,51 @@ import ServiceBox from "./../component/ServiceBox.jsx";
 import Button from "./../component/Button.jsx";
 import "./../css/pageCss/Home.css";
 
-import image from "./../images/hello.jpg";
+import image from "./../images/home.png";
 import image1 from "./../images/search.png";
+import electrician from "./../images/electrician.png"
+import plumber from "./../images/plumber.png"
+import painter from "./../images/painter.png"
+import cleaner from "./../images/cleaner.png"
+import dishwasher from "./../images/dishwasher.png"
+import laundry from "./../images/laundry.png"
+import carpenter from "./../images/carpenter.png"
+import technician from "./../images/technician.png"
+import selroti from "./../images/selroti.png"
+import tuitionteacher from "./../images/tuitionteacher.png"
+import sweeper from "./../images/sweeper.png"
+import repairman from "./../images/repairman.png"
+import gardener from "./../images/gardener.png"
+import pandit from "./../images/pandit.png"
+import caretaker from "./../images/caretaker.png"
+
+
+
+
+
+
+
+
+
+
+
 
 const services = [
-  { title: "Electrician", image: image, description: "Electrical Services" },
-  { title: "Plumber", image: image },
-  { title: "Painter", image: image },
-  { title: "Cleaner", image: image },
-  { title: "Dish-Washer", image: image },
-  { title: "Laundry", image: image },
-  { title: "Carpenter", image: image },
-  { title: "Technician", image: image },
-  { title: "Sel-roti", image: image },
-  { title: "Tuition Teacher", image: image },
-  { title: "Sweeper", image: image },
-  { title: "Repair-man", image: image },
-  { title: "Service 14", image: image },
-  { title: "Service 14", image: image },
-  { title: "Service 14", image: image },
+  { title: "Electrician", image: electrician, description: "Electrical Services" },
+  { title: "Plumber", image: plumber },
+  { title: "Painter", image: painter },
+  { title: "Cleaner", image: cleaner },
+  { title: "Dish-Washer", image: dishwasher },
+  { title: "Laundry", image: laundry },
+  { title: "Carpenter", image: carpenter },
+  { title: "Technician", image: technician },
+  { title: "Selroti Maker", image: selroti },
+  { title: "Tuition Teacher", image: tuitionteacher },
+  { title: "Sweeper", image: sweeper },
+  { title: "Repair-man", image: repairman },
+  { title: "Gardener", image: gardener },
+  { title: "Pandits", image: pandit },
+  { title: "Care Taker", image: caretaker },
 ];
 
 const Home = () => {
@@ -36,7 +62,7 @@ const Home = () => {
           </h1>
           <br></br>
           <div className="search-container">
-            <button className="filter-button">Filter</button>
+            <button className="filter-button">Search</button>
             <input
               type="text"
               className="search-input"
@@ -57,6 +83,15 @@ const Home = () => {
               <span className="tag">Electrician</span>
               <span className="tag">Panche Baja</span>
               <span className="tag">Laundry Service</span>
+              <span className="tag">Gardener</span>
+              <span className="tag">Plumber</span>
+              <span className="tag">Caretaker</span>
+              <span className="tag">Technician</span>
+              <span className="tag">Pandits</span>
+              <span className="tag">Tuition Teacher</span>
+
+
+
             </div>
           </div>
         </div>
@@ -79,46 +114,10 @@ const Home = () => {
             />
           ))}
         </div>
-        <div className="buttons-container">
-          <Button
-            label="Join RojgarNepal Community and Start Earning"
-            link="/join"
-          />
-          {/* <Button label="Become a Freelancer" link="/freelancer" /> */}
-        </div>
+      
       </div>
 
-      <div className="home-body">
-        <div className="body-img">
-          <img src={image1} alt="Search" />
-        </div>
-        <div className="body-content">
-          <h1>A whole country of freelance talents at your finger tips</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            malesuada, odio sit amet consectetur pulvinar, odio turpis tincidunt
-            nulla, eu scelerisque nulla libero vitae mauris. Nam condimentum leo
-            sit amet velit tempor, at varius urna finibus. Duis in ante sit amet
-            lectus laoreet hendrerit. Duis vulputate mi quis massa ultricies,
-            nec aliquet eros tristique. Vestibulum ante ipsum primis in faucibus
-            orci luctus et ultrices posuere cubilia curae; Nunc nec justo nisi.
-            Mauris vel libero tortor. Maecenas sagittis odio felis, eget finibus
-            urna cursus id. Aenean at urna sapien. Sed eget massa risus. Cras id
-            augue quis lorem posuere volutpat nec ut tellus. Vivamus interdum
-            odio at tellus pellentesque suscipit. Phasellus vel ex nec nunc
-            laoreet convallis. Vivamus pharetra purus id nisi dignissim, nec
-            tristique justo fringilla. Donec tempus nulla non mauris dictum
-            aliquam. Nulla nec ex est. Nulla facilisi. Sed lacinia aliquam
-            ultricies. Integer id purus elit. Etiam dictum sollicitudin metus,
-            at fermentum dui viverra sit amet. Suspendisse posuere quam et
-            tortor pharetra, nec venenatis ex venenatis. Sed ac enim sed turpis
-            rhoncus suscipit nec nec lacus. Etiam auctor, quam eget sagittis
-            consequat, nulla ligula laoreet ligula, eu sollicitudin nisi leo non
-            leo. Maecenas commodo ex id suscipit fermentum. Maecenas ac ligula
-            consequat, dapibus dolor at, sodales dolor. Nulla facilisi.
-          </p>
-        </div>
-      </div>
+   
     </>
   );
 };

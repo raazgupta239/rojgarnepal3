@@ -9,6 +9,10 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLinkClick = () => {
+    setMenuOpen(false); // Close menu when a link is clicked
+  };
+
   return (
     <nav className={`navbar ${menuOpen ? 'show' : ''}`}>
       <div className="logo">RojgarNepal</div>
@@ -16,20 +20,13 @@ const Navbar = () => {
         ☰
       </div>
       <div className="nav-links">
-        <Link to="/" className="nav-item">Home</Link>
-        <Link to="/services" className="nav-item">Services</Link>
-        <Link to="/about" className="nav-item">About</Link>
-        <div className="nav-item dropdown">
-          <span className="dropdown-toggle">Join Network &#x25BC;</span>
-          <div className="dropdown-content">
-            <Link to="/join/freelancer">Become a Freelancer</Link>
-            <Link to="/join/client">Join as a Client</Link>
-          </div>
-        </div>
+        <Link to="/" className="nav-item" onClick={handleLinkClick}>Home</Link>
+        <Link to="/services" className="nav-item" onClick={handleLinkClick}>Services</Link>
+        <Link to="/about" className="nav-item" onClick={handleLinkClick}>About</Link>
       </div>
       <div className="auth-buttons">
-        <Link to="/login" className="login">Log In</Link>
-        <Link to="/signup" className="signup">Sign Up</Link>
+        <Link to="/login" className="login" onClick={handleLinkClick}>Log In</Link>
+        <Link to="/signup" className="signup" onClick={handleLinkClick}>Sign Up</Link>
       </div>
     </nav>
   );

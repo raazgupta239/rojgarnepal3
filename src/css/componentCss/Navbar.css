@@ -26,9 +26,9 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 50px; /* Adjust the gap between buttons */
+  gap: 5%;
   flex-grow: 1;
-  justify-content: flex-end; /* Align from right to left */
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -45,34 +45,33 @@ body {
   width: 0;
   height: 2px;
   display: block;
-  background: green; /* Change the color to green */
+  background: green;
   transition: width 0.3s;
   bottom: 0;
   left: 0;
 }
 
 .nav-item:hover::after,
-.login:hover::after { /* Apply the same hover effect to the login button */
+.login:hover::after {
   width: 100%;
 }
 
 .auth-buttons {
   margin-left: 15px;
   display: flex;
-  gap: 32px; /* Adjust the gap between buttons */
-  align-items: center; /* Ensure buttons are vertically aligned */
+  gap: 32px;
+  align-items: center;
 }
 
 .login,
 .signup {
-  
   text-decoration: none;
   padding: 5px 15px;
   border-radius: 5px;
   display: flex;
-  align-items: center; /* Ensure text is vertically centered */
-  position: relative; /* Ensure proper z-index stacking */
-  overflow: hidden; /* Hide overflow of pseudo-element */
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .login {
@@ -82,11 +81,10 @@ body {
 .signup {
   color: #fff;
   background-color: green;
-  border-radius: 14px;
+  border-radius: 10px;
+  width: fit-content;
 }
 
-
-/* Style for the green line for login button */
 .login::after {
   content: '';
   position: absolute;
@@ -98,7 +96,6 @@ body {
   transition: width 0.3s;
 }
 
-/* Expand the green line on hover */
 .login:hover::after {
   width: 100%;
 }
@@ -167,10 +164,51 @@ body {
     position: static;
     box-shadow: none;
   }
-}
 
-@media (max-width: 768px) {
+  .login{
+    margin-left: -12px;
+  }
+  .logo {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .signup {
+    background-color: green;
+    color: white;
+    width: fit-content;
+  }
+
   .menu-toggle {
     display: block;
   }
+
+  .nav-item,
+  .login {
+    padding: 10px 20px;
+    
+    font-weight: bolder;
+
+  }
+
+  
+
+  .signup{
+
+    padding: 10px 20px;
+    
+    font-weight: bolder;
+    margin-top: -30px;
+    margin-left: 0px;
+    color: white;
+   
+  }
+
+  
+}
+
+
+
+@media (max-width: 600px) {
+
 }

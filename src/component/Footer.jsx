@@ -1,15 +1,16 @@
 import './../css/componentCss/Footer.css';
 import React from 'react';
+import logo from "../images/home.png"
 
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="container">
                 <div className="footer-section">
-                    <img src="logo.png" alt="RojgarNepal" className="logo" />
+                    <h2>RojgarNepal</h2>
                 </div>
                 <div className="footer-section">
-                    <h2>Company</h2>
+                    <h2>Quick Links</h2>
                     <ul>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Services</a></li>
