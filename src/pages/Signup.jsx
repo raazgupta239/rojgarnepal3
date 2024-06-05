@@ -109,8 +109,8 @@ const navigate= useNavigate();
               required
             >
               <option value="">Select User Type</option>
-              <option value="client">Client</option>
-              <option value="freelancer">Freelancer</option>
+              <option value="Client">Client</option>
+              <option value="Freelancer">Freelancer</option>
             </select>
           </div>
         </div>
