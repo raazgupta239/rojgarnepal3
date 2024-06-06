@@ -1,0 +1,83 @@
+/* VerifyOtp.css */
+
+.verify-otp-container {
+    max-width: 900px;
+    width: 90%;
+    /* height: 40%; */
+    margin-top: 160px;
+    margin-bottom: 202px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 90px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .verify-otp-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .verify-otp-form h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+  }
+  
+  .verify-otp-form h2 span {
+    color: #ff6600;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 107%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .submit-btn {
+    background-color: #183E67;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0f2f50;
+  }
+  
+  /* Error message styles */
+  .error-message {
+    color: rgb(232, 91, 91);
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Responsive styles */
+  @media only screen and (max-width: 600px) {
+    .form-group input {
+      padding: 12px;
+    }
+  
+    .submit-btn {
+      padding: 12px;
+    }
+  }
+  
