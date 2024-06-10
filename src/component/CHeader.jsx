@@ -10,9 +10,14 @@ const CHeader = () => {
           <h1>Hello <span className="client-name">{clientname}</span>! 👋</h1>
           <p className="motive">Let's kick start your project by posting a job now.</p>
           <p className="stats">Your Active Projects: 2</p>
-          <a href="./../pages/clientdashboard" className="new-action">View Status</a>
+          <a href="/clientDashboard" className="new-action">View Status</a>
         </div>
+<<<<<<< aayusha
         <button className="post-job-button"><a href='../JobPost'>+ Post a Job</a></button>
+=======
+        <button className="post-job-button"><a href="/jobPost">+ Post a Job</a></button>
+        {/* <button className="post-job-button"><a href="./../pages/jobpost">+ Post a Job</a></button> */}
+>>>>>>> master
       </div>
     </header>
   );
