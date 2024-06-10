@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import React from 'react';
+
 import JobPost from '../pages/JobPost';
 
 import './../css/componentCss/CHeaderClient.css';
@@ -69,7 +69,7 @@ const CHeader = () => {
      
 
 
-        <button className="post-job-button"><a href="./../pages/jobpost">+ Post a Job</a></button>
+        <button className="post-job-button"><a href="/jobpost">+ Post a Job</a></button>
 
       </div>
     </header>
