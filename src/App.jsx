@@ -28,22 +28,17 @@ const App = () => {
         <Route path="/about" element={<About />} />        
         <Route path="/jobPost" element={<JobPost/>} />        
 
-<<<<<<< HEAD
+
    
 
-=======
-        <Route path="freelancer" element={<FreelancerHome/>} /> 
->>>>>>> d557729e19ccb1da7de5d8e8d23f61fd6bfe2a0a
+
         <Route path="/client" element={<ClientHome />} /> 
         <Route path="/freelancer" element={<FreelancerHome/>} /> 
 
         <Route path="/clientDashboard" element={<ClientDashboard/>} /> 
         <Route path="/profilePhoto" element={<ProfilePhoto/>} /> 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> d557729e19ccb1da7de5d8e8d23f61fd6bfe2a0a
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/verify-otp" element={<VerifyOtp/>} />

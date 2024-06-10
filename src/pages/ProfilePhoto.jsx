@@ -36,7 +36,7 @@ const ProfilePhoto = () => {
     formData.append('userType', localStorage.getItem('userType'));
   
     try {
-      const response = await axios.post('http://localhost:8000/user/upload', formData, {
+      const response = await axios.post('https://rojgarnepal.loca.lt/user/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

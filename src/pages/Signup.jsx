@@ -30,7 +30,7 @@ const navigate= useNavigate();
 
     try {
       // Send POST request to your API endpoint using Axios
-      const response = await axios.post('http://localhost:8000/user/signup', formData);
+      const response = await axios.post('https://rojgarnepal.loca.lt/user/signup', formData);
         
       // Handle successful form submission
       console.log('Form data submitted successfully', response.data);

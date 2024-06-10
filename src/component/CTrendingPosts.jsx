@@ -14,7 +14,7 @@ const CTrendingPosts = () => {
     const fetchPosts = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:8000/client/recent-jobs', {
+        const response = await axios.get('https://rojgarnepal.loca.lt/client/recent-jobs', {
           headers: {
             Authorization: `Bearer ${token}`
           }

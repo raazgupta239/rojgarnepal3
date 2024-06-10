@@ -18,7 +18,7 @@ const VerifyOtp = () => {
 
     try {
       // Send POST request to your API endpoint using Axios
-      const response = await axios.post('http://localhost:8000/user/verify-otp', { emailOtp: otp });
+      const response = await axios.post('https://rojgarnepal.loca.lt/user/verify-otp', { emailOtp: otp });
 
       // Handle successful verification
       console.log('OTP verified successfully', response.data);

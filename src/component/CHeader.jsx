@@ -23,7 +23,7 @@ const CHeader = () => {
         const userId = localStorage.getItem("userId"); // Assuming you store userId in localStorage
         const token = localStorage.getItem("token"); // Retrieve the token from localStorage
 
-        const response = await axios.get(`http://localhost:8000/client/stats`, {
+        const response = await axios.get(`https://rojgarnepal.loca.lt/client/stats`, {
           params: { userId },
           headers: {
             Authorization: `Bearer ${token}`
