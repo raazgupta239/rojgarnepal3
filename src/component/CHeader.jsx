@@ -1,5 +1,5 @@
 import React from 'react';
-import JobPost from '../pages/JobPost';
+// import JobPost from '../pages/JobPost';
 import './../css/componentCss/CHeaderClient.css';
 const clientname="Aayusha";
 const CHeader = () => {
@@ -12,12 +12,10 @@ const CHeader = () => {
           <p className="stats">Your Active Projects: 2</p>
           <a href="/clientDashboard" className="new-action">View Status</a>
         </div>
-<<<<<<< aayusha
-        <button className="post-job-button"><a href='../JobPost'>+ Post a Job</a></button>
-=======
+
         <button className="post-job-button"><a href="/jobPost">+ Post a Job</a></button>
         {/* <button className="post-job-button"><a href="./../pages/jobpost">+ Post a Job</a></button> */}
->>>>>>> master
+
       </div>
     </header>
   );
