@@ -7,7 +7,7 @@ import userprofile5 from './../images/userprofile5.jpg';
 const CTrendingPosts = () => {
   const postsPerPage = 3;
   const [currentPage, setCurrentPage] = useState(1);
-
+;
   const posts = [
     {
       userprofile: userprofile,
@@ -35,7 +35,7 @@ const CTrendingPosts = () => {
     },
     {
       userprofile: userprofile4,
-      title: " Electrician Required For Repairs",
+      title: " Electrician Required ",
       time: "11 hours ago",
       description: "Looking for an experienced cook to make selroti for a family function. Requires traditional Nepali cooking skills.Event will be held in kathmandu,and ingredients will be provided.",
       location: "Thapathali, Kathmandu",
@@ -62,7 +62,7 @@ const CTrendingPosts = () => {
 
   return (
     <section className="trending-posts">
-      <hr />
+   
       <section className="trending-posts-border">
         <h2>Trending Posts :</h2>
         <p>Discover the most popular job listings right now.</p>

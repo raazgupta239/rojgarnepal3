@@ -1,5 +1,5 @@
-.Cheader {
-    background: linear-gradient(to right, rgba(228, 245, 55, 0.153), #f0f0f0);
+.Fheader {
+    background: linear-gradient(to right, rgba(245, 55, 204, 0.153), #ffffff);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -8,6 +8,9 @@
   
   .greeting-section {
     display: flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
     justify-content: space-between;
     align-items: center;
   }
@@ -24,7 +27,7 @@
     margin-bottom: 10px;
   }
   
-  .greeting h1 .client-name {
+  .greeting h1 .freelancer-name {
     color: #ff9800;
   }
   
@@ -96,4 +99,6 @@
       font-size: 18px;
     }
   }
-  
+  .completedprojects{
+    color: #ad9b6a;
+  }

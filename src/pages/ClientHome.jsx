@@ -1,6 +1,4 @@
 import React from "react";
-
-
 import CHeader from "../component/CHeader";
 import CTrendingPosts from "../component/CTrendingPosts";
 import CAdvantages from "../component/CAdvantages";
@@ -9,6 +7,7 @@ const ClientHome = () => {
         <>
     <CHeader/>
     <CTrendingPosts/>
+    <br /><br />
    <CAdvantages/>
 </>
     )

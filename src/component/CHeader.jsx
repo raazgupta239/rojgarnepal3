@@ -1,10 +1,10 @@
 import React from 'react';
-
+import JobPost from '../pages/JobPost';
 import './../css/componentCss/CHeaderClient.css';
 const clientname="Aayusha";
 const CHeader = () => {
   return (
-    <header className="header">
+    <header className="Cheader">
       <div className="greeting-section">
         <div className="greeting">
           <h1>Hello <span className="client-name">{clientname}</span>! 👋</h1>
@@ -12,7 +12,7 @@ const CHeader = () => {
           <p className="stats">Your Active Projects: 2</p>
           <a href="./../pages/clientdashboard" className="new-action">View Status</a>
         </div>
-        <button className="post-job-button"><a href="./../pages/jobpost">+ Post a Job</a></button>
+        <button className="post-job-button"><a href='../JobPost'>+ Post a Job</a></button>
       </div>
     </header>
   );
