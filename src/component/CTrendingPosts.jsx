@@ -5,6 +5,7 @@ import './../css/componentCss/CTrendingPosts.css';
 const CTrendingPosts = () => {
   const postsPerPage = 3;
   const [currentPage, setCurrentPage] = useState(1);
+
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,6 +33,10 @@ const CTrendingPosts = () => {
 
     fetchPosts();
   }, []);
+
+;
+  
+
 
   const totalPages = Math.ceil(posts.length / postsPerPage);
   const startIndex = (currentPage - 1) * postsPerPage;
@@ -97,7 +102,7 @@ const CTrendingPosts = () => {
 
   return (
     <section className="trending-posts">
-      <hr />
+   
       <section className="trending-posts-border">
         <h2>Trending Posts :</h2>
         <p>Discover the most popular job listings right now.</p>

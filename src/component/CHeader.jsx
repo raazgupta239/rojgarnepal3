@@ -1,5 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
+import React from 'react';
+import JobPost from '../pages/JobPost';
+
 import './../css/componentCss/CHeaderClient.css';
 
 const clientname = localStorage.getItem("fullName");
@@ -49,7 +54,7 @@ const CHeader = () => {
   }
 
   return (
-    <header className="header">
+    <header className="Cheader">
       <div className="greeting-section">
         <div className="greeting">
           <h1>Hello <span className="client-name">{clientname}</span>! 👋</h1>
@@ -60,7 +65,12 @@ const CHeader = () => {
           </p>
           <a href="/clientDashboard" className="new-action">View Status</a>
         </div>
-        <button className="post-job-button"><a href="/jobPost">+ Post a Job</a></button>
+
+     
+
+
+        <button className="post-job-button"><a href="./../pages/jobpost">+ Post a Job</a></button>
+
       </div>
     </header>
   );
