@@ -194,6 +194,7 @@
     .post-cards-container {
       flex-direction: column;
       align-items: center;
+      
     }
   
     .post-card {

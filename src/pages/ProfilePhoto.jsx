@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Don't forget to import axios
+import axios from 'axios';
 import './../css/pageCss/ProfilePhoto.css';
 
 const ProfilePhoto = () => {
@@ -17,34 +17,54 @@ const ProfilePhoto = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage('');
-
+  
     if (!profilePhoto) {
       setErrorMessage('Please select a profile photo.');
       return;
     }
-
+  
+    // Validate file type
+    const allowedTypes = ['image/jpeg', 'image/png'];
+    if (!allowedTypes.includes(profilePhoto.type)) {
+      setErrorMessage('Please upload an image in JPG/JPEG or PNG format.');
+      return;
+    }
+  
     const formData = new FormData();
-    formData.append('profilePhoto', profilePhoto);
-
+    formData.append('image', profilePhoto);
+    formData.append('email', localStorage.getItem('email'));
+    formData.append('userType', localStorage.getItem('userType'));
+  
     try {
-      // Send POST request to your API endpoint using Axios
-      const response = await axios.post('https://yourapiendpoint.com/upload-photo', formData, {
+      const response = await axios.post('http://localhost:8000/user/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-
-      // Handle successful photo upload
-      const { userType } = response.data;
-      if (userType === 'Client') {
-        navigate('/client');
-      } else if (userType === 'Freelancer') {
-        navigate('/service');
+      
+      if (response.data.success) {
+        const storedUserType = localStorage.getItem('userType');
+        if (storedUserType === 'Client') {
+          navigate('/client');
+        } else if (storedUserType === 'Freelancer') {
+          navigate('/freelancer-service');
+        }
+      } else {
+        setErrorMessage(response.data.message);
       }
     } catch (error) {
-      // Handle error and set the error message
       setErrorMessage('Error uploading photo: ' + (error.response?.data?.message || error.message));
       console.error('Error uploading photo:', error.message);
+    }
+  };
+  
+
+  const handleSkip = () => {
+    if (userType === 'Client') {
+      navigate('/client');
+    } else if (userType === 'Freelancer') {
+      navigate('/freelancer-service');
+
     }
   };
 
@@ -67,6 +87,8 @@ const ProfilePhoto = () => {
         </div>
         <button type="submit" className="submit-btn">Upload Photo</button>
       </form>
+
+      <button className="skip-button" onClick={handleSkip}>Skip</button>
     </div>
   );
 };

@@ -1,5 +1,8 @@
 .job-post-form {
-    max-width: 600px;
+
+
+    max-width: 900px;
+    width: 90%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -50,9 +53,12 @@
     border-radius: 4px;
   }
   
-  .job-post-form .map-container {
-    margin-bottom: 15px;
+ .map-container {
+    /* margin-bottom: 15px; */
+
+    height: 500px;
   }
+
   
   .job-post-form button {
     width: 100%;
@@ -91,6 +97,11 @@
     .job-post-form button {
       padding: 12px;
     }
+
+
+  .map-container MapContainer{
+    height: 60%;
+  }
   }
   
   @media screen and (max-width:500px) {

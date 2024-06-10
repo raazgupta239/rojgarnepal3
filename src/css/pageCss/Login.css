@@ -21,7 +21,8 @@
 }
 
 .signup-link {
-  text-align: center;
+  /* text-align: center; */
+  text-align: end;
 }
 
 .login-form h2 {
@@ -90,6 +91,11 @@
   color: green;
   text-decoration: none;
 }
+
+.signup-link a:hover{
+  text-decoration: underline;
+}
+
 
 .form-group-forgetPass a {
   font-weight: bolder;

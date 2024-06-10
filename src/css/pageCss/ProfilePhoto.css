@@ -1,6 +1,6 @@
 /* Base styles */
 .profile-photo-container {
-    max-width: 900px;
+    max-width: 700px;
     width: 90%;
     margin-top: 90px;
     margin-bottom: 263px;
@@ -63,7 +63,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-weight: bolder;
-    font-size: 1em; /* Ensuring same font size as Login button */
+    font-size: 1rem; /* Ensuring same font size as Login button */
   }
   
   .submit-btn:hover {
@@ -106,7 +106,23 @@
     margin-bottom: 20px;
     margin-top: 20px;
   }
+
+  .skip-button{
+    border:none;
+    background:none;
+    margin-left: 95%;
+
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size:1rem;
+    text-decoration: underline;
+    color: green;
+
+  }
   
+  .skip-button:hover{
+    cursor: pointer;
+  }
   /* Responsive styles */
   @media only screen and (max-width: 600px) {
     .form-group input {
@@ -124,6 +140,15 @@
       color: #333;
       font-size: 1rem;
     }
+
+
+
+    .submit-btn{
+      width: fit-content;
+      font-size: 0.7rem;
+    }
+
+    
   }
   
   /* Additional responsiveness for better mobile experience */
@@ -139,7 +164,12 @@
   
     .submit-btn {
       padding: 12px;
-      font-size: 1rem;
+      /* font-size: 1rem; */
+    }
+
+    .skip-button{
+      margin-left: 80%;
+      font-size: 0.8rem;
     }
   }
   
@@ -155,7 +185,7 @@
   
     .submit-btn {
       padding: 10px;
-      font-size: 0.9rem;
+      /* font-size: 0.9rem; */
     }
   
     .error-message,
@@ -164,3 +194,51 @@
     }
   }
   
+
+  @media screen and (max-width: 200px) {
+    .profile-photo-form h2 {
+
+      font-size: 0.8rem;
+    }
+
+    .skip-button{
+      margin-left: 70%;
+    }
+
+    .submit-btn{
+      width: fit-content;
+      font-size: 0.5rem;
+    }
+
+    .form-group label{
+      font-size: 0.5rem;
+    }
+
+    .form-group input{
+      font-size: 0.5rem;
+      min-width: 100px;
+    }
+
+    
+  }
+  
+
+
+  @media screen and (max-width:140px) {
+    
+    .profile-photo-container {
+      min-width: 120px;
+ 
+    }
+
+
+    .form-group label{
+      font-size: 0.3rem;
+    }
+    
+
+    .form-group input{
+      font-size: 0.1rem;
+      width: 90%;
+    }
+  }
