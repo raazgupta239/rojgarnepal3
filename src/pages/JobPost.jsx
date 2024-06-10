@@ -6,13 +6,14 @@ import './../css/pageCss/JobPost.css';
 
 const JobPost = () => {
   const [formData, setFormData] = useState({
-    title: '',
+    jobTitle: '',
     description: '',
+    date: '',
+    time: '',
+    serviceType: '',
     location: '',
-    pay: '',
-    startDate: '',
-    endDate: '',
     coordinates: { lat: 27.7172, lng: 85.3240 }, // Default to Kathmandu
+    proposedPayAmount: '',
   });
   const [message, setMessage] = useState('');
 
@@ -37,12 +38,10 @@ const JobPost = () => {
     useMapEvents({
       click(e) {
         setFormData({ ...formData, coordinates: e.latlng });
-        console.log('selected cordinates:',e.latlng);
+        console.log('selected cordinates:', e.latlng);
       },
     });
-    return formData.coordinates ? (
-      <Marker position={formData.coordinates} />
-    ) : null;
+    return formData.coordinates ? <Marker position={formData.coordinates} /> : null;
   };
 
   return (
@@ -51,31 +50,55 @@ const JobPost = () => {
       {message && <div className="message">{message}</div>}
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Job Title <span>*</span>:</label>
-          <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} required />
+          <label htmlFor="jobTitle">Job Title <span>*</span>:</label>
+          <input type="text" id="jobTitle" name="jobTitle" value={formData.jobTitle} onChange={handleChange} required />
         </div>
         <div>
           <label htmlFor="description">Job Description <span>*</span>:</label>
           <textarea id="description" name="description" value={formData.description} onChange={handleChange} required />
         </div>
         <div>
+          <label htmlFor="date">Date <span>*</span>:</label>
+          <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} required />
+        </div>
+        <div>
+          <label htmlFor="time">Time <span>*</span>:</label>
+          <input type="time" id="time" name="time" value={formData.time} onChange={handleChange} required />
+        </div>
+        <div>
+          <label htmlFor="serviceType">Service Type <span>*</span>:</label>
+          <select id="serviceType" name="serviceType" value={formData.serviceType} onChange={handleChange} required>
+            <option value="">Select Service Type</option>
+            <option value="Eletrician">Electrician</option>
+            <option value="Plumber">Plumber</option>
+            <option value="Painter">Painter</option>
+            <option value="Cleaner">Cleaner</option>
+            <option value="Dish Washer">Dish Washer</option>
+            <option value="Laundry">Laundry</option>
+            <option value="Carpenter">Carpenter</option>
+            <option value="Technician">Technician</option>
+            <option value="Selroti Maker">Selroti Maker</option>
+            <option value="Tuition Teacher">Tuition Teacher</option>
+            <option value="Sweeper">Sweeper</option>
+            <option value="Repair-man">Repair-man</option>
+            <option value="Gardener">Gardener</option>
+            <option value="Pandit">Pandit</option>
+            <option value="Care Taker">Care Taker</option>
+          </select>
+        </div>
+        <div>
           <label htmlFor="location">Location of Site <span>*</span>:</label>
           <input type="text" id="location" name="location" value={formData.location} onChange={handleChange} required />
         </div>
         <div className="map-container">
-          <MapContainer center={[27.7172, 85.3240]} zoom={13} style={{ height: '300px', width: '100%' }}>
+          <MapContainer center={[27.7172, 85.3240]} zoom={13} style={{ height: '90%', width: '100%' }}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <LocationMarker />
           </MapContainer>
         </div>
         <div>
-          <label htmlFor="pay">Pay Amount <span>*</span>:</label>
-          <input type="text" id="pay" name="pay" value={formData.pay} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="startDate">Duration <span>*</span>:</label>
-          <input type="date" id="startDate" name="startDate" value={formData.startDate} onChange={handleChange} required />
-          <input type="date" id="endDate" name="endDate" value={formData.endDate} onChange={handleChange} required />
+          <label htmlFor="proposedPayAmount">Proposed Pay Amount <span>*</span>:</label>
+          <input type="number" id="proposedPayAmount" name="proposedPayAmount" value={formData.proposedPayAmount} onChange={handleChange} required />
         </div>
         <button type="submit">Find Freelancers</button>
       </form>

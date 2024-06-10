@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './../css/pageCss/Login.css';
-import axios from 'axios'; // Don't forget to import axios
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const Login = () => {
   });
 
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate hook for navigation
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,8 +29,22 @@ const Login = () => {
       // Send POST request to your API endpoint using Axios
       const response = await axios.post('https://rojgarnepal.loca.lt/user/login', formData);
 
-      // Handle successful login
-      console.log('Login successful', response.data);
+
+      // Save the response data in local storage
+
+      const { email, fullName, token, userId, userType } = response.data;
+      localStorage.setItem('email', email);
+      localStorage.setItem('fullName', fullName);
+      localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId);
+      localStorage.setItem('userType', userType);
+
+      // Redirect user based on userType
+      if (userType === 'Client') {
+        navigate('/client');
+      } else if (userType === 'Freelancer') {
+        navigate('/freelancer');
+      }
     } catch (error) {
       // Handle error and set the error message
       setErrorMessage('Error logging in: ' + (error.response?.data?.message || error.message));
@@ -43,7 +59,7 @@ const Login = () => {
         {errorMessage && <div className="error-message">{errorMessage}</div>}
         <br />
         <div className="form-group">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Email</label>
           <input
             type="text"
             id="username"

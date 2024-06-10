@@ -23,8 +23,16 @@ const VerifyOtp = () => {
       // Handle successful verification
       console.log('OTP verified successfully', response.data);
 
+      // Save data to localStorage
+      const { email, fullName, token, userId, userType } = response.data;
+      localStorage.setItem('email', email);
+      localStorage.setItem('fullName', fullName);
+      localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId);
+      localStorage.setItem('userType', userType);
+
       // Redirect to ProfilePhoto page
-      navigate('/profilePhoto', { state: { message: response.data.message } });
+      navigate('/profilePhoto', { state: { message: response.data.message, userType: response.data.userType } });
     } catch (error) {
       // Handle error and set the error message
       setErrorMessage('Error verifying OTP: ' + (error.response?.data?.message || error.message));
@@ -39,7 +47,7 @@ const VerifyOtp = () => {
         {errorMessage && <div className="error-message">{errorMessage}</div>}
         <br />
         <div className="form-group">
-          <label htmlFor="otp">OTP</label>
+          <label htmlFor="otp">Enter OTP sent to your Email</label>
           <input
             type="text"
             id="otp"

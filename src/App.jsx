@@ -15,6 +15,8 @@ import JobPost from './pages/JobPost.jsx';
 import VerifyOtp from './pages/VerifyOtp.jsx';
 import ClientDashboard from './pages/ClientDashboard.jsx';
 import ProfilePhoto from './pages/ProfilePhoto.jsx';
+import Recommendation from "./pages/Recommendations.jsx"
+import FreelancerService from './pages/FreelancerService.jsx';
 
 const App = () => {
   return (
@@ -26,14 +28,25 @@ const App = () => {
         <Route path="/about" element={<About />} />        
         <Route path="/jobPost" element={<JobPost/>} />        
 
-        <Route path="freelancer" element={<FreelancerHome/>} /> 
+
+   
+
+
         <Route path="/client" element={<ClientHome />} /> 
+        <Route path="/freelancer" element={<FreelancerHome/>} /> 
+
         <Route path="/clientDashboard" element={<ClientDashboard/>} /> 
         <Route path="/profilePhoto" element={<ProfilePhoto/>} /> 
+
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/verify-otp" element={<VerifyOtp/>} />
+        <Route path="/freelancer-service" element={<FreelancerService/>} />
+        <Route path="/recommendation" element={<Recommendation/>} />
+
+      
+
       </Routes>
       <Footer/>
     </Router>

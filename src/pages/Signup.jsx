@@ -75,7 +75,7 @@ const navigate= useNavigate();
           <div className="form-group">
             <label htmlFor="phoneNo">Phone No. *</label>
             <input
-              type="tel"
+              type="number"
               id="phoneNo"
               name="phoneNo"
               value={formData.phoneNo}

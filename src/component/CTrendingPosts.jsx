@@ -1,48 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './../css/componentCss/CTrendingPosts.css';
-import userprofile from './../images/clientprofile.png';
-import userprofile1 from './../images/clientmale.jpg';
-import userprofile4 from './../images/userprofile4.jpg';
-import userprofile5 from './../images/userprofile5.jpg';
+
 const CTrendingPosts = () => {
   const postsPerPage = 3;
   const [currentPage, setCurrentPage] = useState(1);
+
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await axios.get('https://rojgarnepal.loca.lt/client/recent-jobs', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        if (response.data.success) {
+          setPosts(response.data.data);
+        } else {
+          setError(response.data.message);
+        }
+      } catch (err) {
+        setError('Failed to fetch posts');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
 ;
-  const posts = [
-    {
-      userprofile: userprofile,
-      title: " Selroti Making Service Needed",
-      time: "4 hours ago",
-      description: "Looking for an experienced cook to make selroti for a family function. Requires traditional Nepali cooking skills.Event will be held in kathmandu,and ingredients will be provided.",
-      location: "Koteshwor, Kathmandu",
-      proposals: 20,
-    },
-    {
-      userprofile:userprofile1 ,
-      title: " Home Tution Teacher Needed",
-      time: "5 hours ago",
-      description: "Looking for an experienced cook to make selroti for a family function. Requires traditional Nepali cooking skills.Event will be held in kathmandu,and ingredients will be provided.",
-      location: "Bagbazaar, Kathmandu",
-      proposals: 50,
-    },
-    {
-      userprofile: userprofile5,
-      title: " Cleaning Service needed",
-      time: "7 hours ago",
-      description: "Looking for an experienced cook to make selroti for a family function. Requires traditional Nepali cooking skills.Event will be held in kathmandu,and ingredients will be provided.",
-      location: "NewRoad, Kathmandu",
-      proposals: 16,
-    },
-    {
-      userprofile: userprofile4,
-      title: " Electrician Required ",
-      time: "11 hours ago",
-      description: "Looking for an experienced cook to make selroti for a family function. Requires traditional Nepali cooking skills.Event will be held in kathmandu,and ingredients will be provided.",
-      location: "Thapathali, Kathmandu",
-      proposals: 9,
-    }
-    // Add more posts as needed
-  ];
+  
+
 
   const totalPages = Math.ceil(posts.length / postsPerPage);
   const startIndex = (currentPage - 1) * postsPerPage;
@@ -59,6 +53,52 @@ const CTrendingPosts = () => {
       setCurrentPage(currentPage - 1);
     }
   };
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+
+  const getTimeDifference = (postTime) => {
+    // Get the current time
+    const currentTime = new Date();
+  
+    // Provided time
+    const providedTime = new Date(postTime);
+  
+    // Calculate the difference in milliseconds
+    const timeDifference = currentTime - providedTime;
+  
+    // Convert milliseconds to minutes
+    const minutesAgo = Math.floor(timeDifference / (1000 * 60));
+  
+    // Convert minutes to hours and minutes
+    const hoursAgo = Math.floor(minutesAgo / 60);
+    const remainingMinutes = minutesAgo % 60;
+  
+    // Construct the formatted time difference string
+    let timeDifferenceString = '';
+    if (hoursAgo > 0) {
+      timeDifferenceString += `${hoursAgo} hours`;
+    }
+    if (remainingMinutes > 0) {
+      timeDifferenceString += ` ${remainingMinutes} minutes`;
+    }else{
+      timeDifferenceString +=`${0} minutes`
+    }
+    timeDifferenceString += ' ago';
+
+    console.log(timeDifferenceString);
+
+
+  
+    return timeDifferenceString;
+  };
+  
 
   return (
     <section className="trending-posts">
@@ -77,24 +117,25 @@ const CTrendingPosts = () => {
               <h3 className="titlename">{post.title}</h3> 
               <section className='time-display'>
                 <span className='clock'>🕓</span><br />
-                <span className='time-description'>{post.time}</span>
+                <span className='time-description'>{getTimeDifference(post.time)}</span>
               </section>
             </div>
             <br />
-            
             <p className="post-description">
-            <img className='user-profile' src={post.userprofile} alt="User Profile"/>
-            <br /><br />
-              "{post.description}"</p>
+              <img className='user-profile' src={post.userProfile} alt="User Profile"/>
+              <br /><br />
+              "{post.description}"
+            </p>
+            <br />
+            <p className="post-meta-item">
+              <span className='location'>Location:</span>
+              <span className='location-value'> {post.location}</span>
               <br />
-            <p className="post-meta-item"><span className='location'>Location:</span><span className='location-value'> {post.location}</span>
-         <br /><span className='proposals'>Proposals:</span><span className='proposal-value'> {post.proposals}</span></p>
-          
-      
+              <span className='posted-by'>Posted By:</span>
+              <span className='posted-by-value'> {post.postedBy}</span>
+            </p>
           </div>
         ))}
-    
-      
         {currentPage > 1 && (
           <button className="view-previous-btn" onClick={handleViewPrevious} title="View Previous">⟵</button>
         )}
@@ -104,7 +145,7 @@ const CTrendingPosts = () => {
       </div>
     </section>
   );
+  
 };
 
 export default CTrendingPosts;
-
