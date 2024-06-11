@@ -5,6 +5,8 @@ import axios from 'axios';
 import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './../css/pageCss/FreelancerService.css';
+import Footer from '../component/Footer';
+import Navbar from '../component/Navbar';
 
 
 const FreelancerService = () => {
@@ -69,6 +71,8 @@ const FreelancerService = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="services-container">
       <form onSubmit={handleSubmit} className="services-form">
         <h2>Add Your <span className="highlight">Service</span> </h2>
@@ -177,6 +181,8 @@ const FreelancerService = () => {
         <button type="submit" className="submit-btn">Submit</button>
       </form>
     </div>
+    <Footer/>
+    </>
   );
 };
 

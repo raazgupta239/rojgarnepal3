@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './../css/pageCss/VerifyOtp.css';
 import axios from 'axios';
+import Footer from '../component/Footer';
+import Navbar from '../component/Navbar';
 
 const VerifyOtp = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
@@ -57,6 +59,8 @@ const VerifyOtp = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="verify-otp-container">
       <form onSubmit={handleSubmit} className="verify-otp-form">
         <h2>Verify <span>OTP</span></h2>
@@ -81,6 +85,8 @@ const VerifyOtp = () => {
         <button type="submit" className="submit-btn">Verify OTP</button>
       </form>
     </div>
+    <Footer/>
+    </>
   );
 };
 

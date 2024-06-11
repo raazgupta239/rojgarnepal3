@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './../css/pageCss/Login.css';
+import Footer from '../component/Footer';
+import Navbar from '../component/Navbar';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -53,6 +55,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="login-container">
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Login <span>To</span> RojgarNepal</h2>
@@ -103,6 +107,8 @@ const Login = () => {
         <p className="signup-link">Don't have an account? <a href="/signup">Sign up</a></p>
       </form>
     </div>
+    <Footer/>
+    </>
   );
 };
 
