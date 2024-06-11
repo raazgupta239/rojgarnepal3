@@ -2,7 +2,8 @@ import React from "react";
 import ServiceBox from "./../component/ServiceBox.jsx";
 import Button from "./../component/Button.jsx";
 import "./../css/pageCss/Home.css";
-
+import Navbar from './../component/Navbar.jsx';
+import Footer from './../component/Footer.jsx';
 import image from "./../images/home.png";
 import image1 from "./../images/search.png";
 import electrician from "./../images/electrician.png"
@@ -53,6 +54,7 @@ const services = [
 const Home = () => {
   return (
     <>
+    <Navbar/>
       <div className="home-container">
         <div className="home">
           <h1>
@@ -117,7 +119,7 @@ const Home = () => {
       
       </div>
 
-   
+   <Footer/>
     </>
   );
 };

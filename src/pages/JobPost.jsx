@@ -3,6 +3,8 @@ import axios from 'axios';
 import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './../css/pageCss/JobPost.css';
+import Footer from '../component/Footer';
+import Navbar from '../component/Navbar';
 
 const JobPost = () => {
   const [formData, setFormData] = useState({
@@ -45,6 +47,8 @@ const JobPost = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="job-post-form">
       <h2>Let's Get <span>Started</span> with Your Job Posting</h2>
       {message && <div className="message">{message}</div>}
@@ -103,6 +107,8 @@ const JobPost = () => {
         <button type="submit">Find Freelancers</button>
       </form>
     </div>
+    <Footer/>
+    </>
   );
 };
 

@@ -1,6 +1,11 @@
 import './../css/componentCss/Footer.css';
 import React from 'react';
-import logo from "../images/home.png"
+
+// Do "npm install @fortawesome/fontawesome-free" to get these icons
+
+import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+
 
 const Footer = () => {
     return (

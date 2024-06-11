@@ -2,6 +2,8 @@ import './../css/pageCss/Signup.css'; // Import the CSS file
 import React, { useState } from 'react';
 import axios from 'axios'; // Don't forget to import axios
 import { useNavigate } from 'react-router-dom';
+import Footer from '../component/Footer';
+import Navbar from '../component/Navbar';
 const SignupForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -45,6 +47,8 @@ const navigate= useNavigate();
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="signup-container">
       <form onSubmit={handleSubmit} className="signup-form">
         <h2>Get <span>Started</span> with RojgarNepal</h2>
@@ -142,6 +146,8 @@ const navigate= useNavigate();
         <p className="login-link">Already have an account? <a href="/login">Login</a></p>
       </form>
     </div>
+    <Footer/>
+    </>
   );
 };
 
