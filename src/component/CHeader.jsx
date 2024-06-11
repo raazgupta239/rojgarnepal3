@@ -28,8 +28,6 @@ const CHeader = () => {
   const navigate = useNavigate(); // Use useNavigate hook for navigation
 //Navigate to Login logic
 
-
-
   useEffect(() => {
     const fetchStats = async () => {
       try {

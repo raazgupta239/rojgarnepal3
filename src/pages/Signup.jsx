@@ -38,7 +38,7 @@ const SignupForm = () => {
     setErrorMessage(''); // Reset the error message before submission
 
     try {
-      const response = await axios.post('http://localhost:8000/user/signup', formData);
+      const response = await axios.post('https://rojgarnepal.loca.lt/user/signup', formData);
       console.log('Form data submitted successfully', response.data);
       navigate('/verify-otp');
     } catch (error) {
