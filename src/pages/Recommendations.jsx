@@ -2,7 +2,7 @@ import React from 'react';
 import './../css/pageCss/Recommendations.css';
 import profileImage from "../images/userprofile5.jpg";
 import Footer from '../component/Footer';
-import Navbar from '../component/Navbar';
+import Navbarclient from '../component/Navbarclient';
 
 const Recommendation = () => {
   localStorage.setItem("jobTitle", `Need freelancers web devs urgently`);
@@ -66,7 +66,7 @@ const Recommendation = () => {
 
   return (
     <>
-  <Navbar/>
+  <Navbarclient/>
     <div className="main-container">
       <div className="heading-div">
         <h1>Best <span className="highlight">Matches</span> for your job</h1>

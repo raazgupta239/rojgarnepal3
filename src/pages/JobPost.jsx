@@ -4,7 +4,8 @@ import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './../css/pageCss/JobPost.css';
 import Footer from '../component/Footer';
-import Navbar from '../component/Navbar';
+
+import Navbarclient from '../component/Navbarclient';
 
 const JobPost = () => {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ const JobPost = () => {
 
   return (
     <>
-    <Navbar/>
+    <Navbarclient/>
     <div className="job-post-form">
       <h2>Let's Get <span>Started</span> with Your Job Posting</h2>
       {message && <div className="message">{message}</div>}
