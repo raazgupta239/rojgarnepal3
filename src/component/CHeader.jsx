@@ -3,6 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+//Navigate to Login logic
+import { useNavigate } from 'react-router-dom';
+
+//Navigate to Login logic
+
+
+
 // import JobPost from '../pages/JobPost';
 import JobPost from '../pages/JobPost';
 
@@ -17,13 +24,17 @@ const CHeader = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+//Navigate to Login logic
+  const navigate = useNavigate(); // Use useNavigate hook for navigation
+//Navigate to Login logic
+
   useEffect(() => {
     const fetchStats = async () => {
       try {
         const userId = localStorage.getItem("userId"); // Assuming you store userId in localStorage
         const token = localStorage.getItem("token"); // Retrieve the token from localStorage
 
-        const response = await axios.get(`https://rojgarnepal.loca.lt/client/stats`, {
+        const response = await axios.get(`http://localhost:8000/client/stats`, {
           params: { userId },
           headers: {
             Authorization: `Bearer ${token}`
@@ -38,6 +49,18 @@ const CHeader = () => {
           setError('Failed to fetch stats');
         }
       } catch (err) {
+
+
+        //Navigate to Login logic
+
+        if (err.response && (err.response.status === 401 || err.response.status === 403)) {
+          // Unauthorized or Forbidden
+          navigate('/login'); // Redirect to login page
+        }
+
+        //Navigate to Login logic
+
+        
         setError('Error fetching stats');
       } finally {
         setLoading(false);
@@ -53,6 +76,7 @@ const CHeader = () => {
 
   if (error) {
     return <p>{error}</p>;
+
   }
 
   return (

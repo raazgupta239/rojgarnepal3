@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './../css/pageCss/JobPost.css';
@@ -19,21 +19,29 @@ const JobPost = () => {
     proposedPayAmount: '',
   });
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const validateForm = () => {
+    const { jobTitle, description, date, time, serviceType, location, proposedPayAmount } = formData;
+    if (!jobTitle || !description || !date || !time || !serviceType || !location || !proposedPayAmount) {
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('https://api.example.com/job-post', formData);
-      if (response.status === 200) {
-        setMessage('Job Details Submitted Successfully!');
-      }
-    } catch (error) {
-      setMessage('Error submitting job details: ' + (error.response?.data?.message || error.message));
+    if (validateForm()) {
+      localStorage.setItem('jobPostData', JSON.stringify(formData));
+      setMessage('Job Details Received Successfully!');
+      navigate('/recommendation'); // Navigate to /recommendation
+    } else {
+      setMessage('Please fill in all required fields.');
     }
   };
 
@@ -41,7 +49,7 @@ const JobPost = () => {
     useMapEvents({
       click(e) {
         setFormData({ ...formData, coordinates: e.latlng });
-        console.log('selected cordinates:', e.latlng);
+        console.log('selected coordinates:', e.latlng);
       },
     });
     return formData.coordinates ? <Marker position={formData.coordinates} /> : null;
@@ -74,7 +82,7 @@ const JobPost = () => {
           <label htmlFor="serviceType">Service Type <span>*</span>:</label>
           <select id="serviceType" name="serviceType" value={formData.serviceType} onChange={handleChange} required>
             <option value="">Select Service Type</option>
-            <option value="Eletrician">Electrician</option>
+            <option value="Electrician">Electrician</option>
             <option value="Plumber">Plumber</option>
             <option value="Painter">Painter</option>
             <option value="Cleaner">Cleaner</option>
