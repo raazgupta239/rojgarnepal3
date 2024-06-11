@@ -2,6 +2,8 @@ import './../css/pageCss/Signup.css'; // Import the CSS file
 import React, { useState } from 'react';
 import axios from 'axios'; // Don't forget to import axios
 import { useNavigate } from 'react-router-dom';
+import ErrorModal from '../component/ErrorModal';
+
 const SignupForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -14,7 +16,9 @@ const SignupForm = () => {
   });
 
   const [errorMessage, setErrorMessage] = useState(''); // State for error message
-  // const errorMessage ='hello world'
+  const [showErrorModal, setShowErrorModal] = useState(false); // State to show/hide the modal
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,23 +27,19 @@ const SignupForm = () => {
       [name]: value,
     });
   };
-const navigate= useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(''); // Reset the error message before submission
 
     try {
-      // Send POST request to your API endpoint using Axios
-      const response = await axios.post('https://rojgarnepal.loca.lt/user/signup', formData);
-        
-      // Handle successful form submission
+      const response = await axios.post('http://localhost:8000/user/signup', formData);
       console.log('Form data submitted successfully', response.data);
-
-      // Navigate to the VerifyOtp page upon successful signup
       navigate('/verify-otp');
     } catch (error) {
-      // Handle error and set the error message
-      setErrorMessage('Error submitting form data: ' + (error.response?.data?.message || error.message));
+      const errorMsg = 'Error submitting form data: ' + (error.response?.data?.message || error.message);
+      setErrorMessage(errorMsg);
+      setShowErrorModal(true); // Show the error modal
       console.error('Error submitting form data:', error.message);
     }
   };
@@ -48,7 +48,7 @@ const navigate= useNavigate();
     <div className="signup-container">
       <form onSubmit={handleSubmit} className="signup-form">
         <h2>Get <span>Started</span> with RojgarNepal</h2>
-        {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Display error message */}
+        {showErrorModal && <ErrorModal message={errorMessage} onClose={() => setShowErrorModal(false)} />}
         <div className="form-group">
           <label htmlFor="fullName">Full Name *</label>
           <input

@@ -27,7 +27,7 @@ const Login = () => {
 
     try {
       // Send POST request to your API endpoint using Axios
-      const response = await axios.post('https://rojgarnepal.loca.lt/user/login', formData);
+      const response = await axios.post('http://localhost:8000/user/login', formData);
 
 
       // Save the response data in local storage
