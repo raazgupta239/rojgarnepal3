@@ -32,7 +32,7 @@ function FApplyNow() {
         throw new Error('Failed to send message');
       }
 
-      // Handle successful response
+     
       const data = await response.json();
       console.log('Message sent successfully:', data);
       setSuccess(true);
