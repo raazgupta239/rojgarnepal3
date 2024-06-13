@@ -75,6 +75,7 @@
 
 .jobpost-details {
   margin-top: 18px;
+  margin-left:0;
 }
 
 .job-description {
@@ -101,6 +102,7 @@
   font-size: 16px;
   color: #ff7f3e;
   margin: 5px 0;
+  cursor: pointer;
 }
 
 .payment {
@@ -135,6 +137,7 @@
   margin-bottom: 20px;
   height: fit-content;
   left: 5.1rem;
+  margin-top: 0rem;
 }
 
 .location-details {
@@ -165,7 +168,7 @@
 .apply-btn {
   background-color: white;
   color: black;
-  border: #1c7ce2 solid 4px;
+  border: orange solid 4px;
   border-radius: 35px;
   padding: 10px 20px;
   cursor: pointer;
@@ -180,14 +183,14 @@
 }
 
 .apply-btn:hover {
-  background-color: #243071;
+  background-color: green;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
   color: white;
 }
 
 .paperplane {
-  color: blue;
+  color: orange;
   font-size: 1.2rem;
 }
 
@@ -220,32 +223,97 @@
   color: white;
 }
 
-/* Adjust the padding-left for smaller screens */
-@media (max-width: 480px) {
+/* Responsive styles */
+@media (max-width: 780px) {
+  .jobs-title {
+    font-size: 24px;
+  }
+
+  .jobs-subtitle {
+    font-size: 18px;
+  }
+
   .job-card {
-    padding-left: 10px; /* Adjust as needed */
+    padding: 15px;
+    padding-left: 60px;
   }
-  .time{
-    margin-top: 5rem;
+
+  .jobpost-title {
+    font-size: 22px;
+    margin-left:10px;
+  }
+
+  .job-description {
+    font-size: 16px;
+  }
+
+  .apply-btn {
+    width: 30%;
+    top: 15px;
+    right: 20px;
+    font-size: 14px;
+  }
+
+  .time {
+    font-size: 13px;
+    top: 4.2rem;
+    margin-top: 22px;
+    left: 4.5rem;
   }
 }
-@media (max-width: 480px) {
-  /* Ensure proper alignment of .pdel div */
+
+
+@media (max-width: 680px) {
+  .jobs-title {
+    font-size: 22px;
+  }
+
+  .jobs-subtitle {
+    font-size: 16px;
+  }
+
+  .job-card {
+    padding: 10px;
+    padding-left: 50px;
+  }
+
+  .jobpost-title {
+    font-size: 20px;
+    margin-left: 25px;
+  }
+
+  .job-description {
+    font-size: 14px;
+  }
+
+  .apply-btn {
+    width: 40%;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+  }
+
+  .time {
+    font-size: 14px;
+    top: 3.6rem;
+    margin-top: 10px;
+    left: 4.6rem;
+  }
+
   .pdel {
-    margin-left: 0; /* Reset margin */
-    margin-right: 0; /* Reset margin */
+    margin-left: 0;
+    margin-right: 0;
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    margin-top: 10px; 
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
   }
-}
-@media (max-width: 480px) {
-  .estimated-hours,.date,.payment{
+
+  .estimated-hours, .date, .payment {
     display: flex;
-    margin-left: 0; 
+    margin-left: 0;
+    margin-top: 5px;
     margin-right: 0;
     flex-direction: column;
-
   }
 }

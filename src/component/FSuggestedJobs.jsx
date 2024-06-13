@@ -81,6 +81,7 @@ function FSuggestedJobs() {
       date: '2024/07/18',
       estimatedHours: '14 Hours'
     }
+    
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -113,7 +114,7 @@ function FSuggestedJobs() {
         {currentJobs.map(job => (
           <div className="job-card" key={job.id}>
             <span className='client-initials'>{job.clientNameFirstLetter}</span>
-            <button className="apply-btn">Apply Now <span className='paperplane'><FontAwesomeIcon icon={faPaperPlane} /></span>  </button>
+            <a href="/freelancerRequest"><button className="apply-btn">Apply Now <span className='paperplane'><FontAwesomeIcon icon={faPaperPlane} /></span>  </button></a>
             <div className="jobpost-details">
               <h3 className='jobpost-title'>{job.title}</h3> <span className="time"><FontAwesomeIcon icon={faClock} /> {job.time}</span>
               <br /><p className="job-description">"{job.jobDescription}"</p>
@@ -122,7 +123,7 @@ function FSuggestedJobs() {
               <p className="payment"> <FontAwesomeIcon icon={faMoneyBill} />&nbsp;&nbsp;Nrs.{job.payment} </p>
               <p className="date">Date: {job.date}</p>
               <p className="estimated-hours"> Estimated Hours : {job.estimatedHours}</p>
-              <p className="location"><FontAwesomeIcon icon={faLocationDot} /> <span className='location-details'>{job.location}</span>  </p>
+              <p className="location" title='View on Map' ><FontAwesomeIcon icon={faLocationDot} /> <span className='location-details'>{job.location}</span>  </p>
               </div>
              
              

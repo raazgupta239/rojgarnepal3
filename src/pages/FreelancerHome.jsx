@@ -18,5 +18,5 @@ function FreelancerHome() {
     </>
   );
 }
-
+/*--*/
 export default FreelancerHome;

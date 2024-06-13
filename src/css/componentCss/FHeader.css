@@ -53,7 +53,7 @@
   }
   
   .post-job-button {
-    background: #2196f3;
+    background: #004494;
    
     border: none;
     padding: 10px 20px;
@@ -67,7 +67,7 @@
     text-decoration: none;
   }
   .post-job-button:hover {
-    background: #0056b3;
+    background: #0f2f50;;
   }
   
   /* Responsive Styles */

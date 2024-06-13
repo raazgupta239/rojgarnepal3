@@ -24,6 +24,7 @@ const Navbar = () => {
         <Link to="/services" className="nav-item" onClick={handleLinkClick}>Services</Link>
         <Link to="/about" className="nav-item" onClick={handleLinkClick}>About</Link>
       </div>
+      
       <div className="auth-buttons">
         <Link to="/login" className="login" onClick={handleLinkClick}>Log In</Link>
         <Link to="/signup" className="signup" onClick={handleLinkClick}>Sign Up</Link>
