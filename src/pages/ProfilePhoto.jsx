@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './../css/pageCss/ProfilePhoto.css';
+import Footer from '../component/Footer';
+import Navbar from '../component/Navbar';
 
 const ProfilePhoto = () => {
   const location = useLocation();
@@ -69,6 +71,8 @@ const ProfilePhoto = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="profile-photo-container">
       <form onSubmit={handleSubmit} className="profile-photo-form">
         <h2>Upload <span>Profile</span> Photo</h2>
@@ -90,6 +94,8 @@ const ProfilePhoto = () => {
 
       <button className="skip-button" onClick={handleSkip}>Skip</button>
     </div>
+    <Footer/>
+    </>
   );
 };
 
