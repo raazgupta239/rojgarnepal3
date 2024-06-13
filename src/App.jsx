@@ -4,8 +4,7 @@ import Navbar from './component/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import Services from './pages/Services';
 import About from './pages/About';
-// import JoinFreelancer from './pages/JoinFreelancer';
-// import JoinClient from './pages/JoinClient';
+
 import ClientHome from './pages/ClientHome.jsx';
 import FreelancerHome from './pages/FreelancerHome.jsx';
 import Login from './pages/Login';
