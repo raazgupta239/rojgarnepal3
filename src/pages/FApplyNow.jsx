@@ -64,5 +64,6 @@ function FApplyNow() {
     </div>
   );
 }
+//Apply now page 
 
 export default FApplyNow;
