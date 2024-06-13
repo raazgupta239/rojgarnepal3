@@ -36,7 +36,7 @@ function FApplyNow() {
       const data = await response.json();
       console.log('Message sent successfully:', data);
       setSuccess(true);
-      setMessage(''); // Clear the message box
+      setMessage(''); 
     } catch (error) {
       console.error('Error sending message:', error);
       setError('Failed to send message. Please try again later.');
