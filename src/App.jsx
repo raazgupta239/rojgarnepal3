@@ -17,6 +17,7 @@ import ClientDashboard from './pages/ClientDashboard.jsx';
 import ProfilePhoto from './pages/ProfilePhoto.jsx';
 import Recommendation from "./pages/Recommendations.jsx"
 import FreelancerService from './pages/FreelancerService.jsx';
+import FApplyNow from './pages/FApplyNow.jsx';
 
 const App = () => {
   return (
@@ -44,7 +45,7 @@ const App = () => {
         <Route path="/verify-otp" element={<VerifyOtp/>} />
         <Route path="/freelancer-service" element={<FreelancerService/>} />
         <Route path="/recommendation" element={<Recommendation/>} />
-
+        <Route path="/applynow" element={<FApplyNow/>} />
       
 
       </Routes>
