@@ -41,9 +41,7 @@ const App = () => {
    
 
 
-        <Route path="/client" element={<ClientHome />} /> 
-        <Route path="/freelancer" element={<FreelancerHome/>} /> 
-
+      
        
         <Route path="/applynow" element={<FApplyNow/>} />
       
