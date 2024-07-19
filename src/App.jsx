@@ -9,8 +9,7 @@ import {
 import Home from "./pages/Home.jsx";
 import Services from "./pages/Services";
 import About from "./pages/About";
-// import JoinFreelancer from './pages/JoinFreelancer';
-// import JoinClient from './pages/JoinClient';
+
 
 import ClientHome from './pages/ClientHome.jsx';
 import FreelancerHome from './pages/FreelancerHome.jsx';
@@ -24,6 +23,7 @@ import ProfilePhoto from './pages/ProfilePhoto.jsx';
 import Recommendation from "./pages/Recommendations.jsx"
 import FreelancerService from './pages/FreelancerService.jsx';
 import FApplyNow from './pages/FApplyNow.jsx';
+import FSearchFilter from "./pages/FSearchFilter.jsx";
 
 
 const App = () => {
@@ -39,7 +39,7 @@ const App = () => {
         <Route path="/freelancer" element={<FreelancerHome />} />
 
    
-
+        <Route path="/jobsearch" element={<FSearchFilter/>} />
 
       
        

@@ -88,7 +88,6 @@ const CDJobPosting = () => {
   return (
     
     <section className="job-postings-section">
-      <br /><br />
       <h2>My Job Postings</h2>
       <div className="post-cards-container">
         {visiblePosts.map((job) => (
