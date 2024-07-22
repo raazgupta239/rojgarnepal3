@@ -11,7 +11,7 @@ const profile = {
   description:
     'Dedicated to finding the best professionals for my home projects. Seeking reliable, skilled freelancers for quality work and timely completion.',
   location: 'Balkumari, Lalitpur',
-  profilePicture: ''
+  profilePicture: {clientprofile},
 };
 
 const CDProfileDescription = () => {

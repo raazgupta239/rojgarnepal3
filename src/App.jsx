@@ -24,7 +24,7 @@ import Recommendation from "./pages/Recommendations.jsx"
 import FreelancerService from './pages/FreelancerService.jsx';
 import FApplyNow from './pages/FApplyNow.jsx';
 import FSearchFilter from "./pages/FSearchFilter.jsx";
-
+import CSearchFilter from "./pages/CSearchFilter.jsx";
 
 const App = () => {
   return (
@@ -40,7 +40,7 @@ const App = () => {
 
    
         <Route path="/jobsearch" element={<FSearchFilter/>} />
-
+        <Route path="/talentsearch" element={<CSearchFilter/>} />
       
        
         <Route path="/applynow" element={<FApplyNow/>} />
