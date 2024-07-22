@@ -10,7 +10,7 @@ import Home from "./pages/Home.jsx";
 import Services from "./pages/Services";
 import About from "./pages/About";
 
-
+import AdminLogIn from "./pages/AdminLogIn.jsx"
 import ClientHome from './pages/ClientHome.jsx';
 import FreelancerHome from './pages/FreelancerHome.jsx';
 import Login from './pages/Login';
@@ -56,6 +56,9 @@ const App = () => {
         <Route path="/freelancer-service" element={<FreelancerService />} />
         <Route path="/recommendation" element={<Recommendation />} />
 
+
+
+        <Route path="/adminlogin" element={<AdminLogIn />} />
       </Routes>
 
     </BrowserRouter>
