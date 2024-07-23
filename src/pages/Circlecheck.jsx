@@ -15,6 +15,7 @@ const Circlecheck = () => {
 
   return (
     <div className="doughnut-chart-container">
+    
       <div className="doughnut-chart">
         <div className="outer-circle half-circle"></div>
         <div className="inner-circle half-circle"></div>

@@ -1,0 +1,57 @@
+.sidebar {
+    width: 20%;
+    height: 100vh; /* Full viewport height */
+/* Changed background color to black */
+background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: fixed; /* Keep it fixed to the left */
+    top: 0;
+    left: 0;
+    border-radius: 0 20px 20px 0 ;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .user-info {
+    margin-bottom: 20px;
+  }
+  
+  .navigation ul {
+    list-style: none;
+    width: 100%;
+    padding: 0; /* Remove default padding */
+  }
+  
+  .navigation li {
+    padding: 100px;
+    margin-top: 80px;
+    border-bottom: 1px solid #34495e;
+    cursor: pointer;
+  }
+  
+  .navigation .badge {
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-left: 10px;
+  }
+  
+  .logout-button {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
