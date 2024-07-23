@@ -9,6 +9,7 @@ import {
 import Home from "./pages/Home.jsx";
 import Services from "./pages/Services";
 import About from "./pages/About";
+import Circlecheck from "./pages/Circlecheck.jsx";
 
 import AdminLogIn from "./pages/AdminLogIn.jsx"
 import ClientHome from './pages/ClientHome.jsx';
@@ -25,6 +26,9 @@ import FreelancerService from './pages/FreelancerService.jsx';
 import FApplyNow from './pages/FApplyNow.jsx';
 import FSearchFilter from "./pages/FSearchFilter.jsx";
 import CSearchFilter from "./pages/CSearchFilter.jsx";
+
+
+
 
 const App = () => {
   return (
@@ -59,6 +63,8 @@ const App = () => {
 
 
         <Route path="/adminlogin" element={<AdminLogIn />} />
+        <Route path="/circle" element={<Circlecheck />} />
+
       </Routes>
 
     </BrowserRouter>

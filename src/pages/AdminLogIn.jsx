@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './../css/pageCss/AdminLogIn.css';
-import image from './../images/adminbg.jpg'
+
 import logo from './../images/LOGO.png'
 
 const validationSchema = Yup.object().shape({
@@ -25,7 +25,7 @@ const AdminLogIn = () => {
         
       </div>
       <div className="alogin-form">
-        <h2>Admin LogIn To RojgarNepal</h2>
+        <h2>Admin LogIn To <span className='arojgar-np'> RojgarNepal</span></h2>
         <Formik
           initialValues={{ id: '', password: '' }}
           validationSchema={validationSchema}
