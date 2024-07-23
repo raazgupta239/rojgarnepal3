@@ -26,6 +26,10 @@ import FreelancerService from './pages/FreelancerService.jsx';
 import FApplyNow from './pages/FApplyNow.jsx';
 import FSearchFilter from "./pages/FSearchFilter.jsx";
 import CSearchFilter from "./pages/CSearchFilter.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
+import AdminJobPosts from "./pages/AdminJobPosts.jsx";
+import AdminBookings from "./pages/AdminBookings.jsx";
+import AdminVerifyUser from "./pages/AdminVerifyUser.jsx";
 
 
 
@@ -63,6 +67,10 @@ const App = () => {
 
 
         <Route path="/adminlogin" element={<AdminLogIn />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/jobPosts" element={<AdminJobPosts />} />
+        <Route path="/admin" element={<AdminBookings/>} />
+        <Route path="/verifyUser" element={<AdminVerifyUser/>} />
         <Route path="/circle" element={<Circlecheck />} />
 
       </Routes>
