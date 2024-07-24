@@ -1,11 +1,11 @@
 
   
-  .jobs {
+  .adminjobs {
     display: flex;
     flex-direction: column;
-   margin-left:3rem;
+   margin-left:2rem;
    
-   width: 110%;
+   width: 115%;
     margin-top: 0%;
   }
   
@@ -188,14 +188,14 @@
   
  
   
-  .pagination {
+  .adminpagination {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    margin-left: 4rem;
+    margin-left: 7rem;
   }
   
-  .pagination button {
+  .adminpagination button {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     padding: 5px 10px;
@@ -205,11 +205,11 @@
     border-radius: 5px;
   }
   
-  .pagination button:hover {
+  .adminpagination button:hover {
     background-color: #ddd;
   }
   
-  .pagination button.active {
+  .adminpagination button.active {
     background-color:#ff7f3e;
     color: rgb(0, 0, 0);
   }

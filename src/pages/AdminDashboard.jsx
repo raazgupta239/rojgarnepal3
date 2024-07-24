@@ -44,7 +44,7 @@ const AdminDashboard = () => {
       <SideBar  />
       <main className="content">
         <TopSearchBar />
-        <Header bookings={bookings} />
+        <Header bookings={bookings} pagename="Bookings"/>
         <Filter />
         <BookingTable bookings={bookings} />
       </main>

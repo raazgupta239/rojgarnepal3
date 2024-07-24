@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../component/Header';
+import Filter from '../component/Filter';
 import './../css/componentCss/AllJobPosts.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltDown, faTrashCan, faMoneyBill, faClock, faLocationDot } from '@fortawesome/free-solid-svg-icons';
@@ -125,6 +126,7 @@ function AllJobPosts() {
   return (
     <div className="reasontodelete">
       <Header bookings={bookings} pagename=" Job Posts" />
+      <Filter />
       {jobToDelete ? (
         <div className="delete-form">
           <h3>Reason for deleting the job:</h3>
@@ -133,7 +135,7 @@ function AllJobPosts() {
           <button onClick={() => setJobToDelete(null)}>Cancel</button>
         </div>
       ) : (
-        <div className="jobs">
+        <div className="adminjobs">
           {currentJobs.map(job => (
             <div className="job-card" key={job.id}>
               <span className='client-initials'>{job.clientNameFirstLetter}</span>
@@ -153,7 +155,7 @@ function AllJobPosts() {
           ))}
         </div>
       )}
-      <div className="pagination">
+      <div className="adminpagination">
         <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>{"<"}</button>
         {pageNumbers.map(number => (
           <button key={number} onClick={() => paginate(number)} className={currentPage === number ? 'active' : ''}>

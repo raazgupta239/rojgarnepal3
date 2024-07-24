@@ -10,9 +10,7 @@
     
     margin-left: 400px;
   }
-  .header h1{
-    margin-top: -150px;
-  }
+  
   
   .sidebar {
     width: 20%;
@@ -86,38 +84,12 @@
     padding: 10px 20px;
   }
   
-  .filter {
-    display: flex;
-    align-items: center;
-    /* margin-bottom: 30px; */
-    margin-top: -100px;
-    margin-left: 500px;
-    /* background: #2c3e50; */
-    height: 100px;
-    padding: 10px;
-  }
-  
-  .filter label {
-    margin-right: 10px;
-  }
-  
-  .filter input {
-    margin-right: 10px;
-    padding: 5px;
-  }
-  
-  .filter-button {
-    padding: 5px 10px;
-    background-color: #3498db;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+
   
   .booking-table {
     width: 100%;
     border-collapse: collapse;
+    
   }
   
   .booking-table th, .booking-table td {

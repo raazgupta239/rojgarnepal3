@@ -1,14 +1,14 @@
 import React from 'react'
-import './../css/pageCss/AdminDashboard.css';
+import './../css/componentCss/Filter.css';
 
 const Filter = () => {
   return (
-    <div className="filter">
+    <div className="adminfilter">
     <label>From:</label>
     <input type="date" />
     <label>To:</label>
     <input type="date" />
-    <button className="filter-button">Filter</button>
+    <button className="adminfilter-button">Filter</button>
   </div>
   )
 }
