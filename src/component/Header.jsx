@@ -1,12 +1,12 @@
 // src/component/Header.jsx
 import React from 'react';
 import Circlecheck from '../pages/Circlecheck';
-import './../css/pageCss/AdminDashboard.css';
+import './../css/componentCss/Header.css';
 
-const Header = ({ bookings }) => {
+const Header = ({ bookings,pagename }) => {
   return (
     <header className="header">
-      <h1>Total Bookings:</h1>
+      <h1>Total {pagename}:</h1>
       <Circlecheck data={bookings.length} />
     </header>
   );
