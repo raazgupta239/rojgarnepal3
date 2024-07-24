@@ -31,6 +31,9 @@ import AdminJobPosts from "./pages/AdminJobPosts.jsx";
 import AdminBookings from "./pages/AdminBookings.jsx";
 import AdminVerifyUser from "./pages/AdminVerifyUser.jsx";
 
+import AllJobPosts from "./component/AllJobPosts.jsx";
+
+
 
 
 
@@ -72,6 +75,11 @@ const App = () => {
         <Route path="/admin" element={<AdminBookings/>} />
         <Route path="/verifyUser" element={<AdminVerifyUser/>} />
         <Route path="/circle" element={<Circlecheck />} />
+
+
+
+        <Route path="/alljobpost" element={<AllJobPosts />} />
+
 
       </Routes>
 
