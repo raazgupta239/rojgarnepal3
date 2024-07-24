@@ -1,0 +1,13 @@
+/* Ensure this file only contains styles specific to AdminJobPosts */
+
+.admin-verify-user .content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 420px; /* Adjust as needed */
+    flex: 1;
+    background-color: #ffffff; /* Background color for content area */
+  }
+  
+  /* Other styles specific to AdminJobPosts */
+  
