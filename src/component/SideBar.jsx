@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './../css/componentCss/SideBar.css';
 import logo from './../images/LOGO.png';
 
-const SideBar = ({ bookingsCount, jobPostsCount }) => {
+const SideBar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -17,20 +17,24 @@ const SideBar = ({ bookingsCount, jobPostsCount }) => {
 
   return (
     <aside className="sidebar">
-      {/* <div className="logo">RojgarNepal</div> */}
-      <div className="alogin-header">
-        <img src={logo} alt="RojgarNepal Logo" className="alogo" />
+      <div className="logo-header">
+        <img src={logo} alt="RojgarNepal Logo" className="logo" />
       </div>
-      {/* <div className="user-info">Hello Ryan,</div> */}
       <nav className="navigation">
         <ul>
-          <li> USER STATISTICS</li>
-          <li onClick={() => navigate('/admin')}>BOOKINGS <span className="badge">{bookingsCount}</span></li>
-          <li onClick={() => navigate('/jobPosts')}>JOB POSTS <span className="badge">{jobPostsCount}</span></li>
-          <li onClick={() => navigate('/verifyUser')}>VERIFY USER</li>
+          <li className="section-title">USER STATISTICS</li>
+          <li onClick={() => navigate('/admin')} className="nav-item">
+            BOOKINGS 
+          </li>
+          <li onClick={() => navigate('/jobPosts')} className="nav-item">
+            JOB POSTS 
+          </li>
+          <li onClick={() => navigate('/verifyUser')} className="nav-item">
+            VERIFY USER
+          </li>
         </ul>
       </nav>
-      <button className="logout-button" onClick={handleLogout}>LogOut</button>
+      <button className="logout-button" onClick={handleLogout}>Log Out</button>
     </aside>
   );
 };

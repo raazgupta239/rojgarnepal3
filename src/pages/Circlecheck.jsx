@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import './../css/pageCss/circlecheck.css';
 
-const Circlecheck = () => {
-  const data = 49;
+const Circlecheck = ({ data }) => {
 
   useEffect(() => {
     const outerCircle = document.querySelector('.outer-circle');
@@ -15,11 +14,10 @@ const Circlecheck = () => {
 
   return (
     <div className="doughnut-chart-container">
-    
       <div className="doughnut-chart">
         <div className="outer-circle half-circle"></div>
         <div className="inner-circle half-circle"></div>
-            <div className="innermost-circle"></div>
+        <div className="innermost-circle"></div>
         <div className="data-display">
           {data}
         </div>
