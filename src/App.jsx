@@ -71,10 +71,11 @@ const App = () => {
 
 
         <Route path="/adminlogin" element={<AdminLogIn />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        {/* <Route path="/admin" element={<AdminDashboard />} /> */}
+        <Route path="/admin" element={<AdminUserStatistics />} />
         <Route path="/jobPosts" element={<AdminJobPosts />} />
-        <Route path="/admin" element={<AdminBookings/>} />
-        <Route path="/userStatistics" element={<AdminUserStatistics/>}/>
+        <Route path="/admin-booking" element={<AdminDashboard/>} />
+        {/* <Route path="/userStatistics" element={<AdminUserStatistics/>}/> */}
         <Route path="/verifyUser" element={<AdminVerifyUser/>} />
         <Route path="/circle" element={<Circlecheck />} />
 

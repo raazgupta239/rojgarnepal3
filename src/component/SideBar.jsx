@@ -22,10 +22,10 @@ const SideBar = () => {
       </div>
       <div className="sidebar-navigation">
         <ul>
-          <li className="sidebar-nav-item" onClick={() => navigate('/userStatistics')}>
+          <li className="sidebar-nav-item" onClick={() => navigate('/admin')}>
             USER STATISTICS
           </li>
-          <li className="sidebar-nav-item" onClick={() => navigate('/admin')}>
+          <li className="sidebar-nav-item" onClick={() => navigate('/admin-booking')}>
             BOOKINGS
           </li>
           <li className="sidebar-nav-item" onClick={() => navigate('/jobPosts')}>
