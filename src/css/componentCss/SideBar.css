@@ -1,57 +1,133 @@
-.sidebar {
-    width: 20%;
-    height: 100vh; /* Full viewport height */
-/* Changed background color to black */
-background: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    position: fixed; /* Keep it fixed to the left */
-    top: 0;
-    left: 0;
-    border-radius: 0 20px 20px 0 ;
-  }
+/* Ensure the sidebar takes full height */
+html, body, .app-root, .admin-dashboard {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo-header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.navigation li {
+  padding: 0 20px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-bottom: 2px solid transparent;
+}
+
+.navigation li{
   
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  border-bottom: 1px solid white;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  margin: 1%;
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Responsive styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+      height: auto;
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
-  .user-info {
-    margin-bottom: 20px;
+
+  .navigation {
+      flex-direction: column;
+      align-items: flex-start;
+      display: none;
+      width: 100%;
   }
-  
+
+  .navigation.open {
+      display: flex;
+  }
+
   .navigation ul {
-    list-style: none;
-    width: 100%;
-    padding: 0; /* Remove default padding */
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
   }
-  
+
   .navigation li {
-    padding: 100px;
-    margin-top: 80px;
-    border-bottom: 1px solid #34495e;
-    cursor: pointer;
+      padding: 10px 20px;
+      width: 100%;
   }
-  
-  .navigation .badge {
-    background-color: #e74c3c;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 10px;
-    margin-left: 10px;
-  }
-  
+
   .logout-button {
-    margin-top: auto;
-    padding: 10px 20px;
-    background-color: #e74c3c;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
+      padding: 10px 20px;
+      width: calc(100% - 40px);
+      margin: 10px 20px;
   }
-  
+
+  .menu-toggle {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navigation li {
+      padding: 8px 20px;
+  }
+
+  .logout-button {
+      padding: 8px 20px;
+  }
+}

@@ -1,4 +1,6 @@
 .top-search-bar {
+  margin-top: 6%;
+  margin-left: 0.5%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -6,13 +8,13 @@
   }
   
   .greeting {
-    margin-top: 20px;
+    margin-left: 10%;
   }
   
   .search-container {
     position: relative;
-    margin-left: 200px;
-    width: 80%;
+    margin-left: 15%;
+    width:60%;
   }
   
   .search-input {
@@ -33,10 +35,8 @@
   }
   
   .separator {
-    width:50rem;
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 0;
+    width:100%;
     margin-top: 10px;
+    margin-left: 0px;
   }
   

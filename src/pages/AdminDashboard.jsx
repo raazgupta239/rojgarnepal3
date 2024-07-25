@@ -1,4 +1,3 @@
-// src/page/AdminDashboard.js
 import React, { useState, useEffect } from 'react';
 import SideBar from '../component/SideBar';
 import TopSearchBar from '../component/TopSearchBar';
@@ -41,10 +40,10 @@ const AdminDashboard = () => {
 
   return (
     <div className="admin-dashboard">
-      <SideBar  />
+      <SideBar />
       <main className="content">
         <TopSearchBar />
-        <Header bookings={bookings} pagename="Bookings"/>
+        <Header bookings={bookings} pagename="Bookings" />
         <Filter />
         <BookingTable bookings={bookings} />
       </main>

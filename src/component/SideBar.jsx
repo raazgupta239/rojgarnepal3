@@ -16,26 +16,28 @@ const SideBar = () => {
   };
 
   return (
-    <aside className="sidebar">
+    <nav className="navbar">
       <div className="logo-header">
         <img src={logo} alt="RojgarNepal Logo" className="logo" />
       </div>
-      <nav className="navigation">
+      <div className="navigation">
         <ul>
-          <li className="section-title">USER STATISTICS</li>
-          <li onClick={() => navigate('/admin')} className="nav-item">
-            BOOKINGS 
+          <li className="nav-item" onClick={() => navigate('/userStatistics')}>
+            USER STATISTICS
           </li>
-          <li onClick={() => navigate('/jobPosts')} className="nav-item">
-            JOB POSTS 
+          <li className="nav-item" onClick={() => navigate('/admin')}>
+            BOOKINGS
           </li>
-          <li onClick={() => navigate('/verifyUser')} className="nav-item">
+          <li className="nav-item" onClick={() => navigate('/jobPosts')}>
+            JOB POSTS
+          </li>
+          <li className="nav-item" onClick={() => navigate('/verifyUser')}>
             VERIFY USER
           </li>
         </ul>
-      </nav>
+      </div>
       <button className="logout-button" onClick={handleLogout}>Log Out</button>
-    </aside>
+    </nav>
   );
 };
 

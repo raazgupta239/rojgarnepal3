@@ -1,0 +1,27 @@
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .booking-table th, .booking-table td {
+    border: 1px solid #ddd;
+    padding: 30px;
+    text-align: left;
+  }
+  
+  .status-active {
+    color: green;
+  }
+  
+  .status-completed {
+    color: blue;
+  }
+  
+  .status-done {
+    color: green;
+  }
+  
+  .status-not-done {
+    color: red;
+  }
+  

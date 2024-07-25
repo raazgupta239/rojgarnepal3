@@ -1,7 +1,7 @@
 // src/component/BookingTable.jsx
 import React from 'react';
 import PropTypes from 'prop-types';
-import './../css/pageCss/AdminDashboard.css';
+import './../css/componentCss/BookingTable.css';
 
 const BookingTable = ({ bookings = [] }) => {
   if (!Array.isArray(bookings)) {

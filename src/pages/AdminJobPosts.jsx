@@ -18,10 +18,7 @@ const AdminJobPosts = () => {
       <SideBar/>
       <main className="content">
         <TopSearchBar />
-       
-        <Filter />
         <AllJobPosts/>
-        
       </main>
     </div>
   );
