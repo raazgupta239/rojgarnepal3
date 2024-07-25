@@ -32,6 +32,7 @@ import AdminBookings from "./pages/AdminBookings.jsx";
 import AdminVerifyUser from "./pages/AdminVerifyUser.jsx";
 
 import AllJobPosts from "./component/AllJobPosts.jsx";
+import AdminUserStatistics from "./pages/AdminUserStatistics.jsx";
 
 
 
@@ -73,6 +74,7 @@ const App = () => {
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/jobPosts" element={<AdminJobPosts />} />
         <Route path="/admin" element={<AdminBookings/>} />
+        <Route path="/userStatistics" element={<AdminUserStatistics/>}/>
         <Route path="/verifyUser" element={<AdminVerifyUser/>} />
         <Route path="/circle" element={<Circlecheck />} />
 
