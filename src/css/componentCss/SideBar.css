@@ -5,7 +5,7 @@ html, body, .app-root, .admin-dashboard {
   padding: 0;
 }
 
-.navbar {
+.sidebar-navbar {
   width: 100%;
   height: 60px;
   background: black;
@@ -20,21 +20,21 @@ html, body, .app-root, .admin-dashboard {
   z-index: 1000;
 }
 
-.logo-header {
+.sidebar-logo-header {
   display: flex;
   align-items: center;
 }
 
-.logo {
+.sidebar-logo {
   height: 40px;
 }
 
-.navigation {
+.sidebar-navigation {
   display: flex;
   align-items: center;
 }
 
-.navigation ul {
+.sidebar-navigation ul {
   list-style: none;
   display: flex;
   margin: 0;
@@ -42,7 +42,7 @@ html, body, .app-root, .admin-dashboard {
   gap: 20px;
 }
 
-.navigation li {
+.sidebar-navigation li {
   padding: 0 20px;
   margin: 0;
   border: none;
@@ -54,12 +54,11 @@ html, body, .app-root, .admin-dashboard {
   border-bottom: 2px solid transparent;
 }
 
-.navigation li{
-  
-  border-bottom: 1px solid white;
+.sidebar-navigation li:hover {
+  border-bottom: 1px solid green;
 }
 
-.logout-button {
+.sidebar-logout-button {
   padding: 10px 20px;
   margin: 1%;
   background-color: #e74c3c;
@@ -70,7 +69,7 @@ html, body, .app-root, .admin-dashboard {
 }
 
 /* Responsive styles */
-.menu-toggle {
+.sidebar-menu-toggle {
   display: none;
   background: none;
   border: none;
@@ -80,41 +79,41 @@ html, body, .app-root, .admin-dashboard {
 }
 
 @media (max-width: 992px) {
-  .navbar {
+  .sidebar-navbar {
       height: auto;
       flex-direction: column;
       align-items: flex-start;
   }
 
-  .navigation {
+  .sidebar-navigation {
       flex-direction: column;
       align-items: flex-start;
       display: none;
       width: 100%;
   }
 
-  .navigation.open {
+  .sidebar-navigation.open {
       display: flex;
   }
 
-  .navigation ul {
+  .sidebar-navigation ul {
       flex-direction: column;
       width: 100%;
       gap: 10px;
   }
 
-  .navigation li {
+  .sidebar-navigation li {
       padding: 10px 20px;
       width: 100%;
   }
 
-  .logout-button {
+  .sidebar-logout-button {
       padding: 10px 20px;
       width: calc(100% - 40px);
       margin: 10px 20px;
   }
 
-  .menu-toggle {
+  .sidebar-menu-toggle {
       display: block;
       position: absolute;
       right: 20px;
@@ -123,11 +122,11 @@ html, body, .app-root, .admin-dashboard {
 }
 
 @media (max-width: 576px) {
-  .navigation li {
+  .sidebar-navigation li {
       padding: 8px 20px;
   }
 
-  .logout-button {
+  .sidebar-logout-button {
       padding: 8px 20px;
   }
 }

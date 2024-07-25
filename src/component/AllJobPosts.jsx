@@ -124,9 +124,11 @@ function AllJobPosts() {
   };
 
   return (
-    <div className="reasontodelete">
+    <>
+
       <Header bookings={bookings} pagename=" Job Posts" />
       <Filter />
+    <div className="reasontodelete">
       {jobToDelete ? (
         <div className="delete-form">
           <h3>Reason for deleting the job:</h3>
@@ -139,7 +141,7 @@ function AllJobPosts() {
           {currentJobs.map(job => (
             <div className="job-card" key={job.id}>
               <span className='client-initials'>{job.clientNameFirstLetter}</span>
-              <button className="delete-btn" onClick={() => handleDeleteClick(job.id)}>Delete<span className='trashcan'><FontAwesomeIcon icon={faTrashCan} /></span></button>
+              <button className="admin-delete-btn" onClick={() => handleDeleteClick(job.id)}>Delete<span className='trashcan'><FontAwesomeIcon icon={faTrashCan} /></span></button>
               <div className="jobpost-details">
                 <h3 className='jobpost-title'>{job.title}</h3> <span className="time"><FontAwesomeIcon icon={faClock} /> {job.time}</span>
                 <br /><p className="job-description">"{job.jobDescription}"</p>
@@ -165,6 +167,7 @@ function AllJobPosts() {
         <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === pageNumbers.length}>{">"}</button>
       </div>
     </div>
+    </>
   );
 }
 

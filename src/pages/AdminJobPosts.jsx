@@ -3,7 +3,7 @@ import SideBar from '../component/SideBar';
 import TopSearchBar from '../component/TopSearchBar';
 
 import './../css/pageCss/AdminDashboard.css';
-import Filter from '../component/Filter';
+
 import AllJobPosts from '../component/AllJobPosts';
 import './../css/pageCss/AdminJobPosts.css';
 
